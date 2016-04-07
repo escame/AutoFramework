@@ -1,14 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using EAAutoFramework.Base;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace GoogleSearchTest.Pages
 {
-    class SearchPage
+    class SearchPage : BasePage
     {
         //Initialize page
-        public SearchPage(IWebDriver driver)
+        public SearchPage(IWebDriver driver) : base(driver)
         {
-            PageFactory.InitElements(driver, this);
         }
 
         //Object Elements for SearchPage

@@ -59,12 +59,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\ResultPage.cs" />
     <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Frw\Frw\Frw.csproj">
+      <Project>{3bdcb278-a85a-4c8c-97c3-824d1097d313}</Project>
+      <Name>Frw</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
