@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using GoogleSearchTest.Pages;
 
 namespace GoogleSearchTest
 {
@@ -24,9 +25,13 @@ namespace GoogleSearchTest
 
         public void searchFor(string searchTerm)
         {
-            _driver.FindElement(By.Name("q")).SendKeys(searchTerm);
+            SearchPage page = new SearchPage(_driver);
 
-            _driver.FindElement(By.Name("btnK")).Submit();
+            page.txtSearch.SendKeys(searchTerm);
+            page.btnSubmit.Submit();
+
+            //_driver.FindElement(By.Name("q")).SendKeys(searchTerm);
+            //_driver.FindElement(By.Name("btnK")).Submit();
         }
     }
 }
