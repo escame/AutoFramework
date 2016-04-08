@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EAAutoFramework.Base
+namespace Frw.Base
 {
     public abstract class BasePage
     {
-        public BasePage(IWebDriver driver)
+        public BasePage()
         {
-            PageFactory.InitElements(driver, this);
+            PageFactory.InitElements(DriverContext.Driver, this);
         }
     }
 }
