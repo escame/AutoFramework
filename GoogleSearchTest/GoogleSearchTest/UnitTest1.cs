@@ -17,20 +17,11 @@ namespace GoogleSearchTest
         {
             DriverContext.Driver = new FirefoxDriver();
             DriverContext.Driver.Navigate().GoToUrl(url);
+
             string searchTerm = "Manual testing is long";
 
-            searchFor(searchTerm);
-        }
-
-        public void searchFor(string searchTerm)
-        {
             SearchPage page = new SearchPage();
-
-            page.txtSearch.SendKeys(searchTerm);
-            page.btnSubmit.Submit();
-
-            //_driver.FindElement(By.Name("q")).SendKeys(searchTerm);
-            //_driver.FindElement(By.Name("btnK")).Submit();
+            ResultPage resultPage = page.SearchFor(searchTerm);
         }
     }
 }

@@ -12,5 +12,15 @@ namespace GoogleSearchTest.Pages
 
         [FindsBy(How = How.Name, Using = "btnK")]
         public IWebElement btnSubmit { get; set; }
+
+        public ResultPage SearchFor(string searchTerm)
+        {
+            SearchPage page = new SearchPage();
+
+            txtSearch.SendKeys(searchTerm);
+            btnSubmit.Submit();
+
+            return new ResultPage();
+        }
     }
 }
