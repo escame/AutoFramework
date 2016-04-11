@@ -20,9 +20,15 @@ namespace GoogleSearchTest
 
             string searchTerm = "Manual testing is long";
 
-            SearchPage page = new SearchPage();
-            CurrentPage = page.SearchFor(searchTerm);
-            Assert.IsTrue(((ResultPage)CurrentPage).IsResultFound(), "Search not found!");
+            //SearchPage page = new SearchPage();
+            //CurrentPage = page.SearchFor(searchTerm);
+            //Assert.IsTrue(((ResultPage)CurrentPage).IsResultFound(), "Search not found!");
+
+            CurrentPage = GetInstance<SearchPage>();
+            CurrentPage = CurrentPage.As<SearchPage>().SearchFor(searchTerm);
+
+            var found = CurrentPage.As<ResultPage>().IsResultFound();
+            Assert.IsTrue(found, "Search not found!");
         }
     }
 }
