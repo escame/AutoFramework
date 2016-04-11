@@ -8,7 +8,7 @@ using Frw.Base;
 namespace GoogleSearchTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest1 : Base
     {
         string url = "http://www.google.com";
 
@@ -21,7 +21,8 @@ namespace GoogleSearchTest
             string searchTerm = "Manual testing is long";
 
             SearchPage page = new SearchPage();
-            ResultPage resultPage = page.SearchFor(searchTerm);
+            CurrentPage = page.SearchFor(searchTerm);
+            Assert.IsTrue(((ResultPage)CurrentPage).IsResultFound(), "Search not found!");
         }
     }
 }

@@ -10,5 +10,13 @@ namespace GoogleSearchTest.Pages
         //Object Elements for SearchPage
         [FindsBy(How = How.CssSelector, Using = "#ires li.g")]
         public IList<IWebElement> searchResults { get; set; }
+
+        public bool IsResultFound()
+        {
+            if (searchResults.Count > 0) {
+                return true;
+            }
+            return false;
+        }
     }
 }

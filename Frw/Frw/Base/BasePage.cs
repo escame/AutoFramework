@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Frw.Base
 {
-    public abstract class BasePage
+    public abstract class BasePage : Base
     {
         public BasePage()
         {
