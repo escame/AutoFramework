@@ -8,15 +8,12 @@ namespace GoogleSearchTest.Pages
     class ResultPage : BasePage
     {
         //Object Elements for SearchPage
-        [FindsBy(How = How.CssSelector, Using = "#ires li.g")]
-        public IList<IWebElement> searchResults { get; set; }
+        [FindsBy(How = How.XPath, Using = "//h3/a")]
+        public IWebElement searchResults { get; set; }
 
-        public bool IsResultFound()
+        public object GetSearchText()
         {
-            if (searchResults.Count > 0) {
-                return true;
-            }
-            return false;
+            return searchResults.Text;
         }
     }
 }

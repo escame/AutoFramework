@@ -42,13 +42,13 @@ namespace GoogleSearchTest
             OpenBrowser(BrowserType.Firefox);
             DriverContext.Browser.GoToUrl(url);
 
-            string searchTerm = "Manual testing is long";
+            string searchTerm = "SpecFlow - Cucumber for .NET";
 
             CurrentPage = GetInstance<SearchPage>();
             CurrentPage = CurrentPage.As<SearchPage>().SearchFor(searchTerm);
 
-            var found = CurrentPage.As<ResultPage>().IsResultFound();
-            Assert.IsTrue(found, "Search not found!");
+            var found = CurrentPage.As<ResultPage>().GetSearchText();
+            Assert.AreEqual(searchTerm, found);
         }
     }
 }
