@@ -1,18 +1,17 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Firefox;
 using GoogleSearchTest.Pages;
 using Frw.Base;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
+using Frw.Config;
 
 namespace GoogleSearchTest
 {
     [TestClass]
     public class UnitTest1 : Base
     {
-        string url = "http://www.google.com";
+        string url = ConfigReader.InitializeTest();
 
         public void OpenBrowser(BrowserType browserType = BrowserType.Firefox)
         {
