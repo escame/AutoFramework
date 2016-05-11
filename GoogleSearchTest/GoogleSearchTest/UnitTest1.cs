@@ -11,8 +11,6 @@ namespace GoogleSearchTest
     [TestClass]
     public class UnitTest1 : Base
     {
-        string url = ConfigReader.InitializeTest();
-
         public void OpenBrowser(BrowserType browserType = BrowserType.Firefox)
         {
             switch (browserType)
@@ -35,11 +33,10 @@ namespace GoogleSearchTest
         [TestMethod]
         public void TestMethod1()
         {
-            //DriverContext.Driver = new FirefoxDriver();
-            //DriverContext.Driver.Navigate().GoToUrl(url);
+            ConfigReader.SetFrameworkSettings();
 
-            OpenBrowser(BrowserType.Firefox);
-            DriverContext.Browser.GoToUrl(url);
+            OpenBrowser(Settings.BrowserType);
+            DriverContext.Browser.GoToUrl(Settings.URL);
 
             string searchTerm = "SpecFlow - Cucumber for .NET";
 

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frw>
+  <RunSettings>
+    <URL>http://www.google.com</URL>
+    <Browser>Firefox</Browser>
+    <IsLog>Y</IsLog>
+    <LogPath>C:\\Logs</LogPath>
+  </RunSettings>
+</Frw>
