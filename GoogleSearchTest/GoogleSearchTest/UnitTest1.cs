@@ -5,6 +5,7 @@ using Frw.Base;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
 using Frw.Config;
+using Frw.Extensions;
 
 namespace GoogleSearchTest
 {

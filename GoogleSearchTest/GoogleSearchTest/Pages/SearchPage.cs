@@ -1,4 +1,5 @@
 ﻿using Frw.Base;
+using Frw.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -17,7 +18,7 @@ namespace GoogleSearchTest.Pages
         {
             txtSearch.SendKeys(searchTerm);
             btnSubmit.Submit();
-
+            DriverContext.Driver.WaitForPageLoaded();
             return GetInstance<ResultPage>();
         }
     }
