@@ -9,7 +9,7 @@ namespace Frw.Config
 {
     public class Settings
     {
-        public static string URL { get; set; }
+        public static string Url { get; set; }
 
         public static BrowserType BrowserType { get; set; }
 

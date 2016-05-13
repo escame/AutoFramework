@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 namespace GoogleSearchTest.Pages
 {
-    class ResultPage : BasePage
+    internal class ResultPage : BasePage
     {
         //Object Elements for SearchPage
         [FindsBy(How = How.XPath, Using = "//h3/a")]
-        public IWebElement searchResults { get; set; }
+        public IWebElement SearchResults { get; set; }
 
         public object GetSearchText()
         {
-            return searchResults.Text;
+            return SearchResults.Text;
         }
     }
 }

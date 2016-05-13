@@ -31,7 +31,7 @@ namespace Frw.Base
         {
             switch (browserType)
             {
-                case BrowserType.IE:
+                case BrowserType.Ie:
                     DriverContext.Driver = new InternetExplorerDriver();
                     DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
@@ -47,7 +47,7 @@ namespace Frw.Base
         }
         public virtual void NavigateSite()
         {
-            DriverContext.Browser.GoToUrl(Settings.URL);
+            DriverContext.Browser.GoToUrl(Settings.Url);
             LogHelpers.Write("Opened the browser!");
         }
     }

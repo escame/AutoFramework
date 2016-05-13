@@ -32,7 +32,7 @@ namespace Frw.Config
             logPath = navigator.SelectSingleNode("Frw/RunSettings/LogPath");
 
             //Set XML Details in the property to be used across framework
-            Settings.URL = url.ToString();
+            Settings.Url = url.ToString();
             Settings.BrowserType = (BrowserType) Enum.Parse(typeof(BrowserType), browserType.ToString());
             Settings.IsLog = isLog.ToString();
             Settings.LogPath = logPath.ToString();

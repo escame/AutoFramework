@@ -26,7 +26,7 @@ namespace Frw.Base
 
     public enum BrowserType
     {
-        IE,
+        Ie,
         Firefox,
         Chrome
     }

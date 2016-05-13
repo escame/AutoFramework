@@ -1,25 +1,31 @@
 ﻿using Frw.Base;
 using Frw.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace GoogleSearchTest.Pages
 {
-    class SearchPage : BasePage
+    internal class SearchPage : BasePage
     {
         //Object Elements for SearchPage
         [FindsBy(How = How.Name, Using = "q")]
-        IWebElement txtSearch { get; set; }
+        IWebElement TxtSearch { get; set; }
 
         [FindsBy(How = How.Name, Using = "btnK")]
-        IWebElement btnSubmit { get; set; }
+        IWebElement BtnSubmit { get; set; }
 
         public ResultPage SearchFor(string searchTerm)
         {
-            txtSearch.SendKeys(searchTerm);
-            btnSubmit.Submit();
+            TxtSearch.SendKeys(searchTerm);
+            BtnSubmit.Submit();
             DriverContext.Driver.WaitForPageLoaded();
             return GetInstance<ResultPage>();
+        }
+
+        internal void CheckIfSearchPageExist()
+        {
+            TxtSearch.AssertElementPresent();
         }
     }
 }

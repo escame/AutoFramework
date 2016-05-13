@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Frw.Config;
+using Frw.Helpers;
 
 namespace Frw.Base
 {
-    class BaseStep
+    public abstract class BaseStep : Base
     {
+
+        public virtual void NavigateSite()
+        {
+            DriverContext.Browser.GoToUrl(Settings.Url);
+            LogHelpers.Write("Opened the browser!");
+        }
     }
 }

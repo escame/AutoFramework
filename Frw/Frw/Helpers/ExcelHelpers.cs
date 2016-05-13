@@ -26,9 +26,9 @@ namespace Frw.Helpers
                 {
                     Datacollection dtTable = new Datacollection()
                     {
-                        rowNumber = row,
-                        colName = table.Columns[col].ColumnName,
-                        colValue = table.Rows[row - 1][col].ToString()
+                        RowNumber = row,
+                        ColName = table.Columns[col].ColumnName,
+                        ColValue = table.Rows[row - 1][col].ToString()
                     };
                     //Add all the details for each row
                     _dataCol.Add(dtTable);
@@ -65,8 +65,8 @@ namespace Frw.Helpers
             {
                 //Retriving Data using LINQ to reduce much of iterations
                 string data = (from colData in _dataCol
-                               where colData.colName == columnName && colData.rowNumber == rowNumber
-                               select colData.colValue).SingleOrDefault();
+                               where colData.ColName == columnName && colData.RowNumber == rowNumber
+                               select colData.ColValue).SingleOrDefault();
 
                 //var datas = dataCol.Where(x => x.colName == columnName && x.rowNumber == rowNumber).SingleOrDefault().colValue;
                 return data.ToString();
@@ -81,8 +81,8 @@ namespace Frw.Helpers
 
     public class Datacollection
     {
-        public int rowNumber { get; set; }
-        public string colName { get; set; }
-        public string colValue { get; set; }
+        public int RowNumber { get; set; }
+        public string ColName { get; set; }
+        public string ColValue { get; set; }
     }
 }

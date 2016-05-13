@@ -12,13 +12,13 @@ namespace Frw.Base
     {
         public BasePage CurrentPage { get; set; }
 
-        private IWebDriver _driver { get; set; }
+        private IWebDriver Driver { get; set; }
 
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
             TPage pageInstance = new TPage()
             {
-                _driver = DriverContext.Driver
+                Driver = DriverContext.Driver
             };
 
             PageFactory.InitElements(DriverContext.Driver, pageInstance);

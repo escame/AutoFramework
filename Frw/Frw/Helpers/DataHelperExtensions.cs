@@ -8,7 +8,7 @@ namespace Frw.Helpers
     {
 
         //Open the connection
-        public static SqlConnection DBConnect(this SqlConnection sqlConnection, string connectionString)
+        public static SqlConnection DbConnect(this SqlConnection sqlConnection, string connectionString)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace Frw.Helpers
 
 
         //Closing the connection 
-        public static void DBClose(this SqlConnection sqlConnection)
+        public static void DbClose(this SqlConnection sqlConnection)
         {
             try
             {
