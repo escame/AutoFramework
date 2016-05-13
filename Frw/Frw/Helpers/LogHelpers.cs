@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frw.Config;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Frw.Helpers
         //Create a file which can store the log information
         public static void CreateLogFile()
         {
-            string dir = @"e:\EAAutoFramework\";
+            string dir = Settings.LogPath;
             if (Directory.Exists(dir))
             {
                 _streamw = File.AppendText(dir + _logFileName + ".log");
