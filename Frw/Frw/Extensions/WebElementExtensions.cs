@@ -33,7 +33,7 @@ namespace Frw.Extensions
         public static void AssertElementPresent(this IWebElement element)
         {
             if (!IsElementPresent(element))
-                throw new Exception(string.Format("Wlement Not Present exception"));
+                throw new Exception(string.Format("Element Not Present exception"));
         }
 
         private static bool IsElementPresent(IWebElement element)

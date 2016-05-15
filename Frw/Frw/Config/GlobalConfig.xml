@@ -4,6 +4,6 @@
     <URL>http://www.google.com</URL>
     <Browser>Firefox</Browser>
     <IsLog>Y</IsLog>
-    <LogPath>C:\\Logs</LogPath>
+    <LogPath>C:\Users\Public\Documents\Logs</LogPath>
   </RunSettings>
 </Frw>

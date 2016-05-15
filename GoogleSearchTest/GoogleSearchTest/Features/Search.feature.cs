@@ -97,9 +97,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
     testRunner.And("I have entered \"BDD\" into the keyword textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-    testRunner.When("I press the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
-    testRunner.Then("I should see a list of articles related to BDD", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("I should see a list of articles related to \"BDD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

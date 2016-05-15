@@ -12,5 +12,4 @@ Scenario: Navigate to Search Engine
 Scenario: Perform search
     Given I am on the home page
     And I have entered "BDD" into the keyword textbox
-    When I press the search button
-    Then I should see a list of articles related to BDD 
+    Then I should see a list of articles related to "BDD" 

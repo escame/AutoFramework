@@ -1,5 +1,6 @@
 ﻿using Frw.Base;
 using GoogleSearchTest.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
 namespace GoogleSearchTest.Steps
@@ -23,22 +24,16 @@ namespace GoogleSearchTest.Steps
         }
 
         [Given(@"I have entered ""(.*)"" into the keyword textbox")]
-        public void GivenIHaveEnteredIntoTheKeywordTextbox(string p0)
+        public void GivenIHaveEnteredIntoTheKeywordTextbox(string searchTerm)
         {
-            CurrentPage.As<SearchPage>().SearchFor(p0);
+            CurrentPage = CurrentPage.As<SearchPage>().SearchFor(searchTerm);
         }
 
-        [When(@"I press the search button")]
-        public void WhenIPressTheSearchButton()
+        [Then(@"I should see a list of articles related to ""(.*)""")]
+        public void ThenIShouldSeeAListOfArticlesRelatedTo(string searchTerm)
         {
-            ScenarioContext.Current.Pending();
+            var found = CurrentPage.As<ResultPage>().GetSearchText();
+            Assert.AreEqual(searchTerm, found);
         }
-
-        [Then(@"I should see a list of articles related to BDD")]
-        public void ThenIShouldSeeAListOfArticlesRelatedToBDD()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
     }
 }
