@@ -90,10 +90,12 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void PerformSearch()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Perform search", ((string[])(null)));
-#line 12
+#line 11
 this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("I have navigated to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-    testRunner.Given("I am on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Then("I should be on the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
     testRunner.And("I have entered \"BDD\" into the keyword textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15

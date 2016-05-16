@@ -71,6 +71,7 @@
     <Compile Include="HookInitialize.cs" />
     <Compile Include="Pages\ResultPage.cs" />
     <Compile Include="Pages\SearchPage.cs" />
+    <Compile Include="Steps\ExtendedSteps.cs" />
     <Compile Include="Steps\SearchSteps.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
