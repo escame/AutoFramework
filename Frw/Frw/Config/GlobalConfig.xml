@@ -5,5 +5,6 @@
     <Browser>Firefox</Browser>
     <IsLog>Y</IsLog>
     <LogPath>C:\Users\Public\Documents\Logs</LogPath>
+    <ApplicationDb>Data Source=Server;Initial Catalog=Employee;Integrated Security=True</ApplicationDb>
   </RunSettings>
 </Frw>

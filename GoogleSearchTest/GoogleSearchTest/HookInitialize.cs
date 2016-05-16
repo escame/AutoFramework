@@ -1,9 +1,6 @@
 ﻿using Frw.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Frw.Config;
+using Frw.Helpers;
 using TechTalk.SpecFlow;
 
 namespace GoogleSearchTest
@@ -14,6 +11,7 @@ namespace GoogleSearchTest
         public HookInitialize() : base(BrowserType.Firefox)
         {
             InitializeSettings();
+//            Settings.ApplicationCon = Settings.ApplicationCon.DBConnect(Settings.AppConnectionString);
          }
         [BeforeFeature]
         public static void TestStart()

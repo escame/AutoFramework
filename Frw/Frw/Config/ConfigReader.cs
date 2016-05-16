@@ -18,6 +18,7 @@ namespace Frw.Config
             XPathItem browserType;
             XPathItem isLog;
             XPathItem logPath;
+            XPathItem appConnection;
 
             string strFileName = Environment.CurrentDirectory.ToString() +
                 @"\Config\GlobalConfig.xml";
@@ -30,12 +31,14 @@ namespace Frw.Config
             browserType = navigator.SelectSingleNode("Frw/RunSettings/Browser");
             isLog = navigator.SelectSingleNode("Frw/RunSettings/IsLog");
             logPath = navigator.SelectSingleNode("Frw/RunSettings/LogPath");
+            appConnection = navigator.SelectSingleNode("Frw/RunSettings/ApplicationDb");
 
             //Set XML Details in the property to be used across framework
             Settings.Url = url.ToString();
             Settings.BrowserType = (BrowserType) Enum.Parse(typeof(BrowserType), browserType.ToString());
             Settings.IsLog = isLog.ToString();
             Settings.LogPath = logPath.ToString();
+            Settings.AppConnectionString = appConnection.Value.ToString();
         }
     
     }
