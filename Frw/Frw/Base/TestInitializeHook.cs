@@ -14,6 +14,7 @@ namespace Frw.Base
         {
             Browser = browser;
         }
+
         public void InitializeSettings()
         {
             //Set all the settings for framework
@@ -27,6 +28,7 @@ namespace Frw.Base
 
             LogHelpers.Write("Initialized framework");
         }
+
         private void OpenBrowser(BrowserType browserType = BrowserType.Firefox)
         {
             switch (browserType)
@@ -45,6 +47,7 @@ namespace Frw.Base
                     break;
             }
         }
+
         public virtual void NavigateSite()
         {
             DriverContext.Browser.GoToUrl(Settings.Url);

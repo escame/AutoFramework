@@ -1,11 +1,7 @@
 ﻿using Frw.Base;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Frw.Extensions
 {
@@ -19,10 +15,11 @@ namespace Frw.Extensions
                 return state == "complete";
             }, 20);
         }
+
         public static void WaitForCondition<T>(this T obj, Func<T, bool> condition, int timeOut)
         {
             Func<T, bool> execute =
-                (arg) =>
+                arg =>
                 {
                     try
                     {
@@ -35,7 +32,7 @@ namespace Frw.Extensions
                 };
 
             var stopWatch = Stopwatch.StartNew();
-            while(stopWatch.ElapsedMilliseconds < timeOut)
+            while (stopWatch.ElapsedMilliseconds < timeOut)
             {
                 if (execute(obj))
                 {
@@ -43,6 +40,7 @@ namespace Frw.Extensions
                 }
             }
         }
+
         internal static object ExecuteJs(this IWebDriver driver, string script)
         {
             return ((IJavaScriptExecutor)DriverContext.Driver).ExecuteScript(script);

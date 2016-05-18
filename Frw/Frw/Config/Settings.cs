@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Frw.Config
 {
-    public class Settings
+    public static class Settings
     {
         public static string Url { get; set; }
 
